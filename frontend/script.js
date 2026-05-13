@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8001';
+const API_URL = 'https://ai-health-api-xyz.onrender.com'; 
 let allSymptoms = [];
 let selectedSymptoms = new Set();
 
