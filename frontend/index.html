@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0f172a">
+    <title>HealthCheck AI | Mobile Diagnostic Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blob blob-1"></div>
+    <div class="background-blob blob-2"></div>
+    
+    <div class="container">
+        <header>
+            <h1>HealthCheck <span class="accent">AI</span></h1>
+            <p class="subtitle">Intelligent Diagnostic Symptom Checker</p>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <div class="glass-card">
+                    <h2>Tell us how you feel</h2>
+                    <p>Select your symptoms for an AI-powered prediction</p>
+                    
+                    <div class="search-box">
+                        <input type="text" id="symptomInput" placeholder="Type a symptom (e.g. headache, fever)..." autocomplete="off">
+                        <div id="suggestions" class="suggestions-list"></div>
+                    </div>
+
+                    <div id="selectedSymptoms" class="symptom-tags">
+                        <!-- Tags will be injected here -->
+                    </div>
+
+                    <button id="predictBtn" class="primary-btn" disabled>Predict Possible Diseases</button>
+                    <button id="clearBtn" class="secondary-btn">Clear All</button>
+                </div>
+
+                <div class="glass-card history-card">
+                    <div class="history-header">
+                        <h3>📋 Recent History</h3>
+                        <button id="clearHistoryBtn" class="text-btn">Clear History</button>
+                    </div>
+                    <div id="historyList" class="history-list">
+                        <p class="empty-msg">No recent history</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="resultsSection" class="results-section hidden">
+                <div class="glass-card results-container">
+                    <h2>AI Analysis Results</h2>
+                    <div id="predictionsList"></div>
+                    <div class="disclaimer">
+                        <p><strong>Disclaimer:</strong> This is an AI prediction based on provided symptoms. It is NOT a medical diagnosis. Please consult a healthcare professional for clinical advice.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 HealthCheck AI. Powered by Scikit-Learn.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
