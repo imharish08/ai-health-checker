@@ -19,10 +19,15 @@ app.add_middleware(
 )
 
 # Load resources
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 try:
-    model = joblib.load('models/health_model.pkl')
-    symptom_list = joblib.load('models/symptom_list.pkl')
-    with open('data/disease_info.json', 'r') as f:
+    model_path = os.path.join(BASE_DIR, 'models', 'health_model.pkl')
+    symptom_list_path = os.path.join(BASE_DIR, 'models', 'symptom_list.pkl')
+    disease_info_path = os.path.join(BASE_DIR, 'data', 'disease_info.json')
+    
+    model = joblib.load(model_path)
+    symptom_list = joblib.load(symptom_list_path)
+    with open(disease_info_path, 'r') as f:
         disease_info = json.load(f)
 except Exception as e:
     print(f"Error loading model/data: {e}")
