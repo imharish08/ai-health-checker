@@ -38,6 +38,14 @@ except Exception as e:
 class SymptomRequest(BaseModel):
     symptoms: List[str]
 
+@app.get("/")
+async def root():
+    return {
+        "status": "online", 
+        "message": "HealthCheck AI API is running successfully!",
+        "endpoints": ["/symptoms", "/predict"]
+    }
+
 @app.get("/symptoms")
 async def get_symptom_list():
     return {"symptoms": symptom_list}
