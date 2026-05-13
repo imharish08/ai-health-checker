@@ -1,4 +1,4 @@
-const API_URL ='https://ai-health-api-1234.onrender.com';
+const API_URL = 'https://ai-health-checker-1-jzwl.onrender.com'; 
 let allSymptoms = [];
 let selectedSymptoms = new Set();
 
